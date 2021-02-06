@@ -1,5 +1,7 @@
 # Arabic (PC) Virtual Keyboard Layout
 
+So far only the normal keys are implemented. Shift, and caps lock do not work as expected yet.
+
 ## History:
 This project started on February 6, 2021.
 It starts as a modification of the DVORAK virtual keyboard layout made by the same software developer and available at the following web address: https://github.com/elsanussi-s-mneina/dvorak_virtual_keyboard_in_html_javascript

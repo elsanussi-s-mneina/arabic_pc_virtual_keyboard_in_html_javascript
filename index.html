@@ -34,7 +34,7 @@ SOFTWARE.
 		<!-- We use the aria-live attribute so that screenreaders will read out changes to the textarea when they occur. This is useful for accessibility. -->
 		<button id="copyButton" onclick="copyTextIntoClipboard();">Copy text</button>
 		<p id="firstRow">
-			<button id="row0key0" onclick="printToOutputFrom('row0key0');">&#x0630;</button>
+			<button id="row0key0" onclick="printToOutputFrom('row0key0');">`</button>
 			<button id="row0key1" onclick="printToOutputFrom('row0key1');">1</button>
 			<button id="row0key2" onclick="printToOutputFrom('row0key2');">2</button>
 			<button id="row0key3" onclick="printToOutputFrom('row0key3');">3</button>
@@ -106,7 +106,7 @@ SOFTWARE.
 		</p>
 
 
-		<footer>Created by <a href="https://github.com/elsanussi-s-mneina">Elsanussi Mneina</a> Last updated on 2021-02-06 <a href="https://github.com/elsanussi-s-mneina/dvorak_virtual_keyboard_in_html_javascript">v1.0.8</a></footer>
+		<footer>Created by <a href="https://github.com/elsanussi-s-mneina">Elsanussi Mneina</a> Last updated on 2021-02-06 <a href="https://github.com/elsanussi-s-mneina/dvorak_virtual_keyboard_in_html_javascript">v0.5.0</a></footer>
 
 		<script>
 			const log = document.getElementById('outputText');
@@ -117,28 +117,85 @@ document.addEventListener('keypress', logKey);
 document.addEventListener('keydown', onKeyDown);
 document.addEventListener('keyup', onKeyUp);
 
+const unshiftedText = "ذ ١ ٢ ٣ ٤ ٥ ٦ ٧ ٨ ٩ ٠ - = ض ص ث ق ف غ ع ه خ ج ح د" + "\ " + " ش س ي ب ل ا ت ن م ك ط ئ ء ؤ ر لا ى ة و ز ظ";
+const unshiftedTextExtraISOChar = "ذ";
+
+const unshiftedTextValues = unshiftedText.split(' ');
+
+
+const row0key0_value = unshiftedTextValues[0];
+const row0key1_value = unshiftedTextValues[1];
+const row0key2_value = unshiftedTextValues[2];
+const row0key3_value = unshiftedTextValues[3];
+const row0key4_value = unshiftedTextValues[4];
+const row0key5_value = unshiftedTextValues[5];
+const row0key6_value = unshiftedTextValues[6];
+const row0key7_value = unshiftedTextValues[7];
+const row0key8_value = unshiftedTextValues[8];
+const row0key9_value = unshiftedTextValues[9];
+const row0key10_value = unshiftedTextValues[10];
+const row0key11_value = unshiftedTextValues[11];
+const row0key12_value = unshiftedTextValues[12];
+
+const row1key0_value = unshiftedTextValues[13];
+const row1key1_value = unshiftedTextValues[14];
+const row1key2_value = unshiftedTextValues[15];
+const row1key3_value = unshiftedTextValues[16];
+const row1key4_value = unshiftedTextValues[17];
+const row1key5_value = unshiftedTextValues[18];
+const row1key6_value = unshiftedTextValues[19];
+const row1key7_value = unshiftedTextValues[20];
+const row1key8_value = unshiftedTextValues[21];
+const row1key9_value = unshiftedTextValues[22];
+const row1key10_value = unshiftedTextValues[23];
+const row1key11_value = unshiftedTextValues[24];
+const row1key12_value = unshiftedTextValues[25];
+
+const row2key0_value = unshiftedTextValues[26];
+const row2key1_value = unshiftedTextValues[27];
+const row2key2_value = unshiftedTextValues[28];
+const row2key3_value = unshiftedTextValues[29];
+const row2key4_value = unshiftedTextValues[30];
+const row2key5_value = unshiftedTextValues[31];
+const row2key6_value = unshiftedTextValues[32];
+const row2key7_value = unshiftedTextValues[33];
+const row2key8_value = unshiftedTextValues[34];
+const row2key9_value = unshiftedTextValues[35];
+const row2key10_value = unshiftedTextValues[36];
+
+const row3key0_value = unshiftedTextValues[37];
+const row3key1_value = unshiftedTextValues[38];
+const row3key2_value = unshiftedTextValues[39];
+const row3key3_value = unshiftedTextValues[40];
+const row3key4_value = unshiftedTextValues[41];
+const row3key5_value = unshiftedTextValues[42];
+const row3key6_value = unshiftedTextValues[43];
+const row3key7_value = unshiftedTextValues[44];
+const row3key8_value = unshiftedTextValues[45];
+const row3key9_value = unshiftedTextValues[46];
+
+changeKeysToUnshiftedValues();
+
 function changeKeysToShiftedValues()
 {
 	document.getElementById("row0key0").innerText = "~";
 
-	if (!capsLock)
-	{
-		document.getElementById("row0key1").innerText = "!";
-		document.getElementById("row0key2").innerText = "@";
-		document.getElementById("row0key3").innerText = "#";
-		document.getElementById("row0key4").innerText = "$";
-		document.getElementById("row0key5").innerText = "%";
-		document.getElementById("row0key6").innerText = "^";
-		document.getElementById("row0key7").innerText = "&";
-		document.getElementById("row0key8").innerText = "*";
-		document.getElementById("row0key9").innerText = "(";
-		document.getElementById("row0key10").innerText = ")";
-		document.getElementById("row0key11").innerText = "{";
-		document.getElementById("row0key12").innerText = "}";
-		document.getElementById("row1key0").innerText = "\"";
-		document.getElementById("row1key1").innerText = "<";
-		document.getElementById("row1key2").innerText = ">";
-	}
+	document.getElementById("row0key1").innerText = "!";
+	document.getElementById("row0key2").innerText = "@";
+	document.getElementById("row0key3").innerText = "#";
+	document.getElementById("row0key4").innerText = "$";
+	document.getElementById("row0key5").innerText = "%";
+	document.getElementById("row0key6").innerText = "^";
+	document.getElementById("row0key7").innerText = "&";
+	document.getElementById("row0key8").innerText = "*";
+	document.getElementById("row0key9").innerText = "(";
+	document.getElementById("row0key10").innerText = ")";
+	document.getElementById("row0key11").innerText = "{";
+	document.getElementById("row0key12").innerText = "}";
+	document.getElementById("row1key0").innerText = "\"";
+	document.getElementById("row1key1").innerText = "<";
+	document.getElementById("row1key2").innerText = ">";
+
 	document.getElementById("row1key3").innerText = "P";
 	document.getElementById("row1key4").innerText = "Y";
 	document.getElementById("row1key5").innerText = "F";
@@ -147,11 +204,8 @@ function changeKeysToShiftedValues()
 	document.getElementById("row1key8").innerText = "R";
 	document.getElementById("row1key9").innerText = "L";
 
-	if (!capsLock)
-	{
-		document.getElementById("row1key10").innerText = "?";
-		document.getElementById("row1key11").innerText = "+";
-	}
+	document.getElementById("row1key10").innerText = "?";
+	document.getElementById("row1key11").innerText = "+";
 
 	document.getElementById("row2key0").innerText = "A";
 	document.getElementById("row2key1").innerText = "O";
@@ -163,13 +217,9 @@ function changeKeysToShiftedValues()
 	document.getElementById("row2key7").innerText = "T";
 	document.getElementById("row2key8").innerText = "N";
 	document.getElementById("row2key9").innerText = "S";
-	if (!capsLock)
-	{
+	document.getElementById("row2key10").innerText = "_";
 
-		document.getElementById("row2key10").innerText = "_";
-
-		document.getElementById("row3key0").innerText = ":";
-	}
+	document.getElementById("row3key0").innerText = ":";
 	document.getElementById("row3key1").innerText = "Q";
 	document.getElementById("row3key2").innerText = "J";
 	document.getElementById("row3key3").innerText = "K";
@@ -183,54 +233,55 @@ function changeKeysToShiftedValues()
 
 function changeKeysToUnshiftedValues()
 {
-	document.getElementById("row0key0").innerText = "\u0630";
-	document.getElementById("row0key1").innerText = "1";
-	document.getElementById("row0key2").innerText = "2";
-	document.getElementById("row0key3").innerText = "3";
-	document.getElementById("row0key4").innerText = "4";
-	document.getElementById("row0key5").innerText = "5";
-	document.getElementById("row0key6").innerText = "6";
-	document.getElementById("row0key7").innerText = "7";
-	document.getElementById("row0key8").innerText = "8";
-	document.getElementById("row0key9").innerText = "9";
-	document.getElementById("row0key10").innerText = "0";
-	document.getElementById("row0key11").innerText = "[";
-	document.getElementById("row0key12").innerText = "]";
-	document.getElementById("row1key0").innerText = "'";
-	document.getElementById("row1key1").innerText = ",";
-	document.getElementById("row1key2").innerText = ".";
-	document.getElementById("row1key3").innerText = "p";
-	document.getElementById("row1key4").innerText = "y";
-	document.getElementById("row1key5").innerText = "f";
-	document.getElementById("row1key6").innerText = "g";
-	document.getElementById("row1key7").innerText = "c";
-	document.getElementById("row1key8").innerText = "r";
-	document.getElementById("row1key9").innerText = "l";
-	document.getElementById("row1key10").innerText = "/";
-	document.getElementById("row1key11").innerText = "=";
+	document.getElementById("row0key0").innerText = row0key0_value;
+	document.getElementById("row0key1").innerText = row0key1_value;
+	document.getElementById("row0key2").innerText = row0key2_value;
+	document.getElementById("row0key3").innerText = row0key3_value;
+	document.getElementById("row0key4").innerText = row0key4_value;
+	document.getElementById("row0key5").innerText = row0key5_value;
+	document.getElementById("row0key6").innerText = row0key6_value;
+	document.getElementById("row0key7").innerText = row0key7_value;
+	document.getElementById("row0key8").innerText = row0key8_value;
+	document.getElementById("row0key9").innerText = row0key9_value;
+	document.getElementById("row0key10").innerText = row0key10_value;
+	document.getElementById("row0key11").innerText = row0key11_value;
+	document.getElementById("row0key12").innerText = row0key12_value;
 
-	document.getElementById("row2key0").innerText = "a";
-	document.getElementById("row2key1").innerText = "o";
-	document.getElementById("row2key2").innerText = "e";
-	document.getElementById("row2key3").innerText = "u";
-	document.getElementById("row2key4").innerText = "i";
-	document.getElementById("row2key5").innerText = "d";
-	document.getElementById("row2key6").innerText = "h";
-	document.getElementById("row2key7").innerText = "t";
-	document.getElementById("row2key8").innerText = "n";
-	document.getElementById("row2key9").innerText = "s";
-	document.getElementById("row2key10").innerText = "-";
+	document.getElementById("row1key0").innerText = row1key0_value;
+	document.getElementById("row1key1").innerText = row1key1_value;
+	document.getElementById("row1key2").innerText = row1key2_value;
+	document.getElementById("row1key3").innerText = row1key3_value;
+	document.getElementById("row1key4").innerText = row1key4_value;
+	document.getElementById("row1key5").innerText = row1key5_value;
+	document.getElementById("row1key6").innerText = row1key6_value;
+	document.getElementById("row1key7").innerText = row1key7_value;
+	document.getElementById("row1key8").innerText = row1key8_value;
+	document.getElementById("row1key9").innerText = row1key9_value;
+	document.getElementById("row1key10").innerText = row1key10_value;
+	document.getElementById("row1key11").innerText = row1key11_value;
 
-	document.getElementById("row3key0").innerText = ";";
-	document.getElementById("row3key1").innerText = "q";
-	document.getElementById("row3key2").innerText = "j";
-	document.getElementById("row3key3").innerText = "k";
-	document.getElementById("row3key4").innerText = "x";
-	document.getElementById("row3key5").innerText = "b";
-	document.getElementById("row3key6").innerText = "m";
-	document.getElementById("row3key7").innerText = "w";
-	document.getElementById("row3key8").innerText = "v";
-	document.getElementById("row3key9").innerText = "z";
+	document.getElementById("row2key0").innerText = row2key0_value;
+	document.getElementById("row2key1").innerText = row2key1_value;
+	document.getElementById("row2key2").innerText = row2key2_value;
+	document.getElementById("row2key3").innerText = row2key3_value;
+	document.getElementById("row2key4").innerText = row2key4_value;
+	document.getElementById("row2key5").innerText = row2key5_value;
+	document.getElementById("row2key6").innerText = row2key6_value;
+	document.getElementById("row2key7").innerText = row2key7_value;
+	document.getElementById("row2key8").innerText = row2key8_value;
+	document.getElementById("row2key9").innerText = row2key9_value;
+	document.getElementById("row2key10").innerText = row2key10_value;
+
+	document.getElementById("row3key0").innerText = row3key0_value;
+	document.getElementById("row3key1").innerText = row3key1_value;
+	document.getElementById("row3key2").innerText = row3key2_value;
+	document.getElementById("row3key3").innerText = row3key3_value;
+	document.getElementById("row3key4").innerText = row3key4_value;
+	document.getElementById("row3key5").innerText = row3key5_value;
+	document.getElementById("row3key6").innerText = row3key6_value;
+	document.getElementById("row3key7").innerText = row3key7_value;
+	document.getElementById("row3key8").innerText = row3key8_value;
+	document.getElementById("row3key9").innerText = row3key9_value;
 }
 
 
@@ -331,7 +382,7 @@ function fromDvorakToQwerty(keyCode, shiftKey)
 		}
 		else
 		{
-			return "'";
+			return row1key0_value;
 		}
 	}
 	else if (keyCode == "KeyW")
@@ -342,7 +393,7 @@ function fromDvorakToQwerty(keyCode, shiftKey)
 		}
 		else
 		{
-			return ",";
+			return row1key1_value;
 		}
 	}
 	else if (keyCode == "KeyE")
@@ -353,7 +404,7 @@ function fromDvorakToQwerty(keyCode, shiftKey)
 		}
 		else
 		{
-			return ".";
+			return row1key2_value;
 		}
 	}
 	else if (keyCode == "KeyR")
@@ -364,7 +415,7 @@ function fromDvorakToQwerty(keyCode, shiftKey)
 		}
 		else
 		{
-			return "p";
+			return row1key3_value;
 		}
 	}
 	else if (keyCode == "KeyT")
@@ -375,7 +426,7 @@ function fromDvorakToQwerty(keyCode, shiftKey)
 		}
 		else
 		{
-			return "y";
+			return row1key4_value;
 		}
 	}
 	else if (keyCode == "KeyY")
@@ -386,7 +437,7 @@ function fromDvorakToQwerty(keyCode, shiftKey)
 		}
 		else
 		{
-			return "f";
+			return row1key5_value;
 		}
 	}
 	else if (keyCode == "KeyU")
@@ -397,7 +448,7 @@ function fromDvorakToQwerty(keyCode, shiftKey)
 		}
 		else
 		{
-			return "g";
+			return row1key6_value;
 		}
 	}
 	else if (keyCode == "KeyI")
@@ -408,7 +459,7 @@ function fromDvorakToQwerty(keyCode, shiftKey)
 		}
 		else
 		{
-			return "c";
+			return row1key7_value;
 		}
 	}
 	else if (keyCode == "KeyO")
@@ -419,7 +470,7 @@ function fromDvorakToQwerty(keyCode, shiftKey)
 		}
 		else
 		{
-			return "r";
+			return row1key8_value;
 		}
 	}
 	else if (keyCode == "KeyP")
@@ -430,7 +481,7 @@ function fromDvorakToQwerty(keyCode, shiftKey)
 		}
 		else
 		{
-			return "l";
+			return row1key9_value;
 		}
 	}
 	else if (keyCode == "BracketLeft")
@@ -441,7 +492,7 @@ function fromDvorakToQwerty(keyCode, shiftKey)
 		}
 		else
 		{
-			return "/";
+			return row1key10_value;
 		}
 	}
 	else if (keyCode == "BracketRight")
@@ -452,7 +503,7 @@ function fromDvorakToQwerty(keyCode, shiftKey)
 		}
 		else
 		{
-			return "=";
+			return row1key11_value;
 		}
 	}
 	else if (keyCode == "Backslash")
@@ -463,7 +514,7 @@ function fromDvorakToQwerty(keyCode, shiftKey)
 		}
 		else
 		{
-			return "\\";
+			return row1key12_value;
 		}
 	}
 	else if (keyCode == "KeyA")
@@ -474,7 +525,7 @@ function fromDvorakToQwerty(keyCode, shiftKey)
 		}
 		else
 		{
-			return "a";
+			return row2key0_value;
 		}
 	}
 	else if (keyCode == "KeyS")
@@ -485,7 +536,7 @@ function fromDvorakToQwerty(keyCode, shiftKey)
 		}
 		else
 		{
-			return "o";
+			return row2key1_value;
 		}
 	}
 	else if (keyCode == "KeyD")
@@ -496,7 +547,7 @@ function fromDvorakToQwerty(keyCode, shiftKey)
 		}
 		else
 		{
-			return "e";
+			return row2key2_value;
 		}
 	}
 	else if (keyCode == "KeyF")
@@ -507,7 +558,7 @@ function fromDvorakToQwerty(keyCode, shiftKey)
 		}
 		else
 		{
-			return "u";
+			return row2key3_value;
 		}
 	}
 	else if (keyCode == "KeyG")
@@ -518,7 +569,7 @@ function fromDvorakToQwerty(keyCode, shiftKey)
 		}
 		else
 		{
-			return "i";
+			return row2key4_value;
 		}
 	}
 	else if (keyCode == "KeyH")
@@ -529,7 +580,7 @@ function fromDvorakToQwerty(keyCode, shiftKey)
 		}
 		else
 		{
-			return "d";
+			return row2key5_value;
 		}
 	}
 	else if (keyCode == "KeyJ")
@@ -540,7 +591,7 @@ function fromDvorakToQwerty(keyCode, shiftKey)
 		}
 		else
 		{
-			return "h";
+			return row2key6_value;
 		}
 	}
 	else if (keyCode == "KeyK")
@@ -551,7 +602,7 @@ function fromDvorakToQwerty(keyCode, shiftKey)
 		}
 		else
 		{
-			return "t";
+			return row2key7_value;
 		}
 	}
 	else if (keyCode == "KeyL")
@@ -562,7 +613,7 @@ function fromDvorakToQwerty(keyCode, shiftKey)
 		}
 		else
 		{
-			return "n";
+			return row2key8_value;
 		}
 	}
 	else if (keyCode == "Semicolon")
@@ -573,7 +624,7 @@ function fromDvorakToQwerty(keyCode, shiftKey)
 		}
 		else
 		{
-			return "s";
+			return row2key9_value;
 		}
 	}
 	else if (keyCode == "Quote")
@@ -584,7 +635,7 @@ function fromDvorakToQwerty(keyCode, shiftKey)
 		}
 		else 
 		{
-			return "-";
+			return row2key10_value;
 		}
 	}
 	else if (keyCode == "KeyZ")
@@ -595,7 +646,7 @@ function fromDvorakToQwerty(keyCode, shiftKey)
 		}
 		else
 		{
-			return ";";
+			return row3key0_value;
 		}
 	}
 	else if (keyCode == "KeyX")
@@ -606,7 +657,7 @@ function fromDvorakToQwerty(keyCode, shiftKey)
 		}
 		else
 		{
-			return "q";
+			return row3key1_value;
 		}
 	}
 	else if (keyCode == "KeyC")
@@ -617,7 +668,7 @@ function fromDvorakToQwerty(keyCode, shiftKey)
 		}
 		else
 		{
-			return "j";
+			return row3key2_value;
 		}
 	}
 	else if (keyCode == "KeyV")
@@ -628,7 +679,7 @@ function fromDvorakToQwerty(keyCode, shiftKey)
 		}
 		else
 		{
-			return "k";
+			return row3key3_value;
 		}
 	}
 	else if (keyCode == "KeyB")
@@ -639,7 +690,7 @@ function fromDvorakToQwerty(keyCode, shiftKey)
 		}
 		else 
 		{
-			return "x";
+			return row3key4_value;
 		}
 	}
 	else if (keyCode == "KeyN")
@@ -650,7 +701,7 @@ function fromDvorakToQwerty(keyCode, shiftKey)
 		}
 		else
 		{
-			return "b";
+			return row3key5_value;
 		}
 	}
 	else if (keyCode == "KeyM")
@@ -661,7 +712,7 @@ function fromDvorakToQwerty(keyCode, shiftKey)
 		}
 		else
 		{
-			return "m";
+			return row3key6_value;
 		}
 	}
 	else if (keyCode == "Comma")
@@ -672,7 +723,7 @@ function fromDvorakToQwerty(keyCode, shiftKey)
 		}
 		else
 		{
-			return "w";
+			return row3key7_value;
 		}
 	}
 	else if (keyCode == "Period")
@@ -683,7 +734,7 @@ function fromDvorakToQwerty(keyCode, shiftKey)
 		}
 		else
 		{
-			return "v";
+			return row3key8_value;
 		}
 	}
 	else if (keyCode == "Slash")
@@ -694,7 +745,7 @@ function fromDvorakToQwerty(keyCode, shiftKey)
 		}
 		else
 		{
-			return "z";
+			return row3key9_value;
 		}
 	}
 	else if (keyCode == "Backquote")
@@ -705,7 +756,7 @@ function fromDvorakToQwerty(keyCode, shiftKey)
 		}
 		else
 		{
-			return "`";
+			return row0key0_value;
 		}
 	}
 	else if (keyCode == "Digit1")
@@ -716,7 +767,7 @@ function fromDvorakToQwerty(keyCode, shiftKey)
 		}
 		else
 		{
-			return "1";
+			return row0key1_value;
 		}
 	}
 	else if (keyCode == "Digit2")
@@ -727,7 +778,7 @@ function fromDvorakToQwerty(keyCode, shiftKey)
 		}
 		else
 		{
-			return "2";
+			return row0key2_value;
 		}
 	}
 	else if (keyCode == "Digit3")
@@ -738,7 +789,7 @@ function fromDvorakToQwerty(keyCode, shiftKey)
 		}
 		else
 		{
-			return "3";
+			return row0key3_value;
 		}
 	}
 	else if (keyCode == "Digit4")
@@ -749,7 +800,7 @@ function fromDvorakToQwerty(keyCode, shiftKey)
 		}
 		else
 		{
-			return "4";
+			return row0key4_value;
 		}
 	}
 	else if (keyCode == "Digit5")
@@ -760,7 +811,7 @@ function fromDvorakToQwerty(keyCode, shiftKey)
 		}
 		else
 		{
-			return "5";
+			return row0key5_value;
 		}
 	}
 	else if (keyCode == "Digit6")
@@ -771,7 +822,7 @@ function fromDvorakToQwerty(keyCode, shiftKey)
 		}
 		else
 		{
-			return "6";
+			return row0key6_value;
 		}
 	}
 	else if (keyCode == "Digit7")
@@ -782,7 +833,7 @@ function fromDvorakToQwerty(keyCode, shiftKey)
 		}
 		else
 		{
-			return "7";
+			return row0key7_value;
 		}
 	}
 	else if (keyCode == "Digit8")
@@ -793,7 +844,7 @@ function fromDvorakToQwerty(keyCode, shiftKey)
 		}
 		else
 		{
-			return "8";
+			return row0key8_value;
 		}
 	}
 	else if (keyCode == "Digit9")
@@ -804,7 +855,7 @@ function fromDvorakToQwerty(keyCode, shiftKey)
 		}
 		else
 		{
-			return "9";
+			return row0key9_value;
 		}
 	}
 	else if (keyCode == "Digit0")
@@ -815,7 +866,7 @@ function fromDvorakToQwerty(keyCode, shiftKey)
 		}
 		else
 		{
-			return "0";
+			return row0key10_value;
 		}
 	}
 	else if (keyCode == "Minus")
@@ -826,7 +877,7 @@ function fromDvorakToQwerty(keyCode, shiftKey)
 		}
 		else
 		{
-			return "[";
+			return row0key11_value;
 		}
 	}
 	else if (keyCode == "Equal")
@@ -837,7 +888,7 @@ function fromDvorakToQwerty(keyCode, shiftKey)
 		} 
 		else
 		{
-			return "]";
+			return row0key12_value;
 		}
 	}
 	else
