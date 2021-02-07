@@ -106,7 +106,7 @@ SOFTWARE.
 		</p>
 
 
-		<footer>Created by <a href="https://github.com/elsanussi-s-mneina">Elsanussi Mneina</a> Last updated on 2021-02-06 <a href="https://github.com/elsanussi-s-mneina/dvorak_virtual_keyboard_in_html_javascript">v0.5.0</a></footer>
+		<footer>Created by <a href="https://github.com/elsanussi-s-mneina">Elsanussi Mneina</a> Last updated on 2021-02-06 <a href="https://github.com/elsanussi-s-mneina/dvorak_virtual_keyboard_in_html_javascript">v0.6.0</a></footer>
 
 		<script>
 			const log = document.getElementById('outputText');
@@ -117,11 +117,24 @@ document.addEventListener('keypress', logKey);
 document.addEventListener('keydown', onKeyDown);
 document.addEventListener('keyup', onKeyUp);
 
-const unshiftedText = "ذ ١ ٢ ٣ ٤ ٥ ٦ ٧ ٨ ٩ ٠ - = ض ص ث ق ف غ ع ه خ ج ح د" + "\ " + " ش س ي ب ل ا ت ن م ك ط ئ ء ؤ ر لا ى ة و ز ظ";
+const unshiftedText = "ذ ١ ٢ ٣ ٤ ٥ ٦ ٧ ٨ ٩ ٠ - = ض ص ث ق ف غ ع ه خ ح ج د" + "\ " + " ش س ي ب ل ا ت ن م ك ط ئ ء ؤ ر لا ى ة و ز ظ";
 const unshiftedTextExtraISOChar = "ذ";
 
 const unshiftedTextValues = unshiftedText.split(' ');
 
+const shiftedText = "ّ ! @ # $ ٪ ^ & * ) ( ـ + " + 
+  "َ ً ُ ٌ لإ إ ‘ ÷ × ؛ < > | " +
+  "ِ ٍ ] [ لأ أ ـ ، / : \" " + 
+  "~ ْ } { لآ آ ’ , . ؟";
+
+const shiftedTextValues = shiftedText.split(' ');
+
+const capsText = "٫ 1 2 3 4 5 6 7 8 9 0 - = " + 
+  "ض ص ث ق ف غ ع ه خ ح ج د \\ " +
+  "ش س ي ب ل ا ت ن م ك ط " +
+  "ئ ء ؤ ر لا ى ة و ز ظ";
+
+const capsTextValues = capsText.split(' ');
 
 const row0key0_value = unshiftedTextValues[0];
 const row0key1_value = unshiftedTextValues[1];
@@ -174,61 +187,228 @@ const row3key7_value = unshiftedTextValues[44];
 const row3key8_value = unshiftedTextValues[45];
 const row3key9_value = unshiftedTextValues[46];
 
+
+
+
+
+
+
+const row0key0_shifted_value  = shiftedTextValues[0];
+const row0key1_shifted_value  = shiftedTextValues[1];
+const row0key2_shifted_value  = shiftedTextValues[2];
+const row0key3_shifted_value  = shiftedTextValues[3];
+const row0key4_shifted_value  = shiftedTextValues[4];
+const row0key5_shifted_value  = shiftedTextValues[5];
+const row0key6_shifted_value  = shiftedTextValues[6];
+const row0key7_shifted_value  = shiftedTextValues[7];
+const row0key8_shifted_value  = shiftedTextValues[8];
+const row0key9_shifted_value  = shiftedTextValues[9];
+const row0key10_shifted_value = shiftedTextValues[10];
+const row0key11_shifted_value = shiftedTextValues[11];
+const row0key12_shifted_value = shiftedTextValues[12];
+
+const row1key0_shifted_value  = shiftedTextValues[13];
+const row1key1_shifted_value  = shiftedTextValues[14];
+const row1key2_shifted_value  = shiftedTextValues[15];
+const row1key3_shifted_value  = shiftedTextValues[16];
+const row1key4_shifted_value  = shiftedTextValues[17];
+const row1key5_shifted_value  = shiftedTextValues[18];
+const row1key6_shifted_value  = shiftedTextValues[19];
+const row1key7_shifted_value  = shiftedTextValues[20];
+const row1key8_shifted_value  = shiftedTextValues[21];
+const row1key9_shifted_value  = shiftedTextValues[22];
+const row1key10_shifted_value = shiftedTextValues[23];
+const row1key11_shifted_value = shiftedTextValues[24];
+const row1key12_shifted_value = shiftedTextValues[25];
+
+const row2key0_shifted_value  = shiftedTextValues[26];
+const row2key1_shifted_value  = shiftedTextValues[27];
+const row2key2_shifted_value  = shiftedTextValues[28];
+const row2key3_shifted_value  = shiftedTextValues[29];
+const row2key4_shifted_value  = shiftedTextValues[30];
+const row2key5_shifted_value  = shiftedTextValues[31];
+const row2key6_shifted_value  = shiftedTextValues[32];
+const row2key7_shifted_value  = shiftedTextValues[33];
+const row2key8_shifted_value  = shiftedTextValues[34];
+const row2key9_shifted_value  = shiftedTextValues[35];
+const row2key10_shifted_value = shiftedTextValues[36];
+
+const row3key0_shifted_value = shiftedTextValues[37];
+const row3key1_shifted_value = shiftedTextValues[38];
+const row3key2_shifted_value = shiftedTextValues[39];
+const row3key3_shifted_value = shiftedTextValues[40];
+const row3key4_shifted_value = shiftedTextValues[41];
+const row3key5_shifted_value = shiftedTextValues[42];
+const row3key6_shifted_value = shiftedTextValues[43];
+const row3key7_shifted_value = shiftedTextValues[44];
+const row3key8_shifted_value = shiftedTextValues[45];
+const row3key9_shifted_value = shiftedTextValues[46];
+
+
+
+
+
+const row0key0_caps_value  = capsTextValues[0];
+const row0key1_caps_value  = capsTextValues[1];
+const row0key2_caps_value  = capsTextValues[2];
+const row0key3_caps_value  = capsTextValues[3];
+const row0key4_caps_value  = capsTextValues[4];
+const row0key5_caps_value  = capsTextValues[5];
+const row0key6_caps_value  = capsTextValues[6];
+const row0key7_caps_value  = capsTextValues[7];
+const row0key8_caps_value  = capsTextValues[8];
+const row0key9_caps_value  = capsTextValues[9];
+const row0key10_caps_value = capsTextValues[10];
+const row0key11_caps_value = capsTextValues[11];
+const row0key12_caps_value = capsTextValues[12];
+
+const row1key0_caps_value  = capsTextValues[13];
+const row1key1_caps_value  = capsTextValues[14];
+const row1key2_caps_value  = capsTextValues[15];
+const row1key3_caps_value  = capsTextValues[16];
+const row1key4_caps_value  = capsTextValues[17];
+const row1key5_caps_value  = capsTextValues[18];
+const row1key6_caps_value  = capsTextValues[19];
+const row1key7_caps_value  = capsTextValues[20];
+const row1key8_caps_value  = capsTextValues[21];
+const row1key9_caps_value  = capsTextValues[22];
+const row1key10_caps_value = capsTextValues[23];
+const row1key11_caps_value = capsTextValues[24];
+const row1key12_caps_value = capsTextValues[25];
+
+const row2key0_caps_value  = capsTextValues[26];
+const row2key1_caps_value  = capsTextValues[27];
+const row2key2_caps_value  = capsTextValues[28];
+const row2key3_caps_value  = capsTextValues[29];
+const row2key4_caps_value  = capsTextValues[30];
+const row2key5_caps_value  = capsTextValues[31];
+const row2key6_caps_value  = capsTextValues[32];
+const row2key7_caps_value  = capsTextValues[33];
+const row2key8_caps_value  = capsTextValues[34];
+const row2key9_caps_value  = capsTextValues[35];
+const row2key10_caps_value = capsTextValues[36];
+
+const row3key0_caps_value = capsTextValues[37];
+const row3key1_caps_value = capsTextValues[38];
+const row3key2_caps_value = capsTextValues[39];
+const row3key3_caps_value = capsTextValues[40];
+const row3key4_caps_value = capsTextValues[41];
+const row3key5_caps_value = capsTextValues[42];
+const row3key6_caps_value = capsTextValues[43];
+const row3key7_caps_value = capsTextValues[44];
+const row3key8_caps_value = capsTextValues[45];
+const row3key9_caps_value = capsTextValues[46];
+
+
+
+
+
 changeKeysToUnshiftedValues();
 
 function changeKeysToShiftedValues()
 {
-	document.getElementById("row0key0").innerText = "~";
+	document.getElementById("row0key0").innerText = row0key0_shifted_value;
+	document.getElementById("row0key1").innerText = row0key1_shifted_value;
+	document.getElementById("row0key2").innerText = row0key2_shifted_value;
+	document.getElementById("row0key3").innerText = row0key3_shifted_value;
+	document.getElementById("row0key4").innerText = row0key4_shifted_value;
+	document.getElementById("row0key5").innerText = row0key5_shifted_value;
+	document.getElementById("row0key6").innerText = row0key6_shifted_value;
+	document.getElementById("row0key7").innerText = row0key7_shifted_value;
+	document.getElementById("row0key8").innerText = row0key8_shifted_value;
+	document.getElementById("row0key9").innerText = row0key9_shifted_value;
+	document.getElementById("row0key10").innerText = row0key10_shifted_value;
+	document.getElementById("row0key11").innerText = row0key11_shifted_value;
+	document.getElementById("row0key12").innerText = row0key12_shifted_value;
 
-	document.getElementById("row0key1").innerText = "!";
-	document.getElementById("row0key2").innerText = "@";
-	document.getElementById("row0key3").innerText = "#";
-	document.getElementById("row0key4").innerText = "$";
-	document.getElementById("row0key5").innerText = "%";
-	document.getElementById("row0key6").innerText = "^";
-	document.getElementById("row0key7").innerText = "&";
-	document.getElementById("row0key8").innerText = "*";
-	document.getElementById("row0key9").innerText = "(";
-	document.getElementById("row0key10").innerText = ")";
-	document.getElementById("row0key11").innerText = "{";
-	document.getElementById("row0key12").innerText = "}";
-	document.getElementById("row1key0").innerText = "\"";
-	document.getElementById("row1key1").innerText = "<";
-	document.getElementById("row1key2").innerText = ">";
+	document.getElementById("row1key0").innerText = row1key0_shifted_value;
+	document.getElementById("row1key1").innerText = row1key1_shifted_value;
+	document.getElementById("row1key2").innerText = row1key2_shifted_value;
+	document.getElementById("row1key3").innerText = row1key3_shifted_value;
+	document.getElementById("row1key4").innerText = row1key4_shifted_value;
+	document.getElementById("row1key5").innerText = row1key5_shifted_value;
+	document.getElementById("row1key6").innerText = row1key6_shifted_value;
+	document.getElementById("row1key7").innerText = row1key7_shifted_value;
+	document.getElementById("row1key8").innerText = row1key8_shifted_value;
+	document.getElementById("row1key9").innerText = row1key9_shifted_value;
+	document.getElementById("row1key10").innerText = row1key10_shifted_value;
+	document.getElementById("row1key11").innerText = row1key11_shifted_value;
 
-	document.getElementById("row1key3").innerText = "P";
-	document.getElementById("row1key4").innerText = "Y";
-	document.getElementById("row1key5").innerText = "F";
-	document.getElementById("row1key6").innerText = "G";
-	document.getElementById("row1key7").innerText = "C";
-	document.getElementById("row1key8").innerText = "R";
-	document.getElementById("row1key9").innerText = "L";
+	document.getElementById("row2key0").innerText = row2key0_shifted_value;
+	document.getElementById("row2key1").innerText = row2key1_shifted_value;
+	document.getElementById("row2key2").innerText = row2key2_shifted_value;
+	document.getElementById("row2key3").innerText = row2key3_shifted_value;
+	document.getElementById("row2key4").innerText = row2key4_shifted_value;
+	document.getElementById("row2key5").innerText = row2key5_shifted_value;
+	document.getElementById("row2key6").innerText = row2key6_shifted_value;
+	document.getElementById("row2key7").innerText = row2key7_shifted_value;
+	document.getElementById("row2key8").innerText = row2key8_shifted_value;
+	document.getElementById("row2key9").innerText = row2key9_shifted_value;
+	document.getElementById("row2key10").innerText = row2key10_shifted_value;
 
-	document.getElementById("row1key10").innerText = "?";
-	document.getElementById("row1key11").innerText = "+";
+	document.getElementById("row3key0").innerText = row3key0_shifted_value;
+	document.getElementById("row3key1").innerText = row3key1_shifted_value;
+	document.getElementById("row3key2").innerText = row3key2_shifted_value;
+	document.getElementById("row3key3").innerText = row3key3_shifted_value;
+	document.getElementById("row3key4").innerText = row3key4_shifted_value;
+	document.getElementById("row3key5").innerText = row3key5_shifted_value;
+	document.getElementById("row3key6").innerText = row3key6_shifted_value;
+	document.getElementById("row3key7").innerText = row3key7_shifted_value;
+	document.getElementById("row3key8").innerText = row3key8_shifted_value;
+	document.getElementById("row3key9").innerText = row3key9_shifted_value;
+}
 
-	document.getElementById("row2key0").innerText = "A";
-	document.getElementById("row2key1").innerText = "O";
-	document.getElementById("row2key2").innerText = "E";
-	document.getElementById("row2key3").innerText = "U";
-	document.getElementById("row2key4").innerText = "I";
-	document.getElementById("row2key5").innerText = "D";
-	document.getElementById("row2key6").innerText = "H";
-	document.getElementById("row2key7").innerText = "T";
-	document.getElementById("row2key8").innerText = "N";
-	document.getElementById("row2key9").innerText = "S";
-	document.getElementById("row2key10").innerText = "_";
+function changeKeysToCapsValues()
+{
+	document.getElementById("row0key0").innerText = row0key0_caps_value;
+	document.getElementById("row0key1").innerText = row0key1_caps_value;
+	document.getElementById("row0key2").innerText = row0key2_caps_value;
+	document.getElementById("row0key3").innerText = row0key3_caps_value;
+	document.getElementById("row0key4").innerText = row0key4_caps_value;
+	document.getElementById("row0key5").innerText = row0key5_caps_value;
+	document.getElementById("row0key6").innerText = row0key6_caps_value;
+	document.getElementById("row0key7").innerText = row0key7_caps_value;
+	document.getElementById("row0key8").innerText = row0key8_caps_value;
+	document.getElementById("row0key9").innerText = row0key9_caps_value;
+	document.getElementById("row0key10").innerText = row0key10_caps_value;
+	document.getElementById("row0key11").innerText = row0key11_caps_value;
+	document.getElementById("row0key12").innerText = row0key12_caps_value;
 
-	document.getElementById("row3key0").innerText = ":";
-	document.getElementById("row3key1").innerText = "Q";
-	document.getElementById("row3key2").innerText = "J";
-	document.getElementById("row3key3").innerText = "K";
-	document.getElementById("row3key4").innerText = "X";
-	document.getElementById("row3key5").innerText = "B";
-	document.getElementById("row3key6").innerText = "M";
-	document.getElementById("row3key7").innerText = "W";
-	document.getElementById("row3key8").innerText = "V";
-	document.getElementById("row3key9").innerText = "Z";
+	document.getElementById("row1key0").innerText = row1key0_caps_value;
+	document.getElementById("row1key1").innerText = row1key1_caps_value;
+	document.getElementById("row1key2").innerText = row1key2_caps_value;
+	document.getElementById("row1key3").innerText = row1key3_caps_value;
+	document.getElementById("row1key4").innerText = row1key4_caps_value;
+	document.getElementById("row1key5").innerText = row1key5_caps_value;
+	document.getElementById("row1key6").innerText = row1key6_caps_value;
+	document.getElementById("row1key7").innerText = row1key7_caps_value;
+	document.getElementById("row1key8").innerText = row1key8_caps_value;
+	document.getElementById("row1key9").innerText = row1key9_caps_value;
+	document.getElementById("row1key10").innerText = row1key10_caps_value;
+	document.getElementById("row1key11").innerText = row1key11_caps_value;
+
+	document.getElementById("row2key0").innerText = row2key0_caps_value;
+	document.getElementById("row2key1").innerText = row2key1_caps_value;
+	document.getElementById("row2key2").innerText = row2key2_caps_value;
+	document.getElementById("row2key3").innerText = row2key3_caps_value;
+	document.getElementById("row2key4").innerText = row2key4_caps_value;
+	document.getElementById("row2key5").innerText = row2key5_caps_value;
+	document.getElementById("row2key6").innerText = row2key6_caps_value;
+	document.getElementById("row2key7").innerText = row2key7_caps_value;
+	document.getElementById("row2key8").innerText = row2key8_caps_value;
+	document.getElementById("row2key9").innerText = row2key9_caps_value;
+	document.getElementById("row2key10").innerText = row2key10_caps_value;
+
+	document.getElementById("row3key0").innerText = row3key0_caps_value;
+	document.getElementById("row3key1").innerText = row3key1_caps_value;
+	document.getElementById("row3key2").innerText = row3key2_caps_value;
+	document.getElementById("row3key3").innerText = row3key3_caps_value;
+	document.getElementById("row3key4").innerText = row3key4_caps_value;
+	document.getElementById("row3key5").innerText = row3key5_caps_value;
+	document.getElementById("row3key6").innerText = row3key6_caps_value;
+	document.getElementById("row3key7").innerText = row3key7_caps_value;
+	document.getElementById("row3key8").innerText = row3key8_caps_value;
+	document.getElementById("row3key9").innerText = row3key9_caps_value;
 }
 
 function changeKeysToUnshiftedValues()
@@ -341,7 +521,7 @@ function toggleCapsLock()
 	else
 	{
 		capsLock = true;
-		changeKeysToShiftedValues();
+		changeKeysToCapsValues();
 	}
 }
 
@@ -378,7 +558,7 @@ function fromDvorakToQwerty(keyCode, shiftKey)
 	{
 		if (shiftKey)
 		{
-			return "\"";
+			return row1key0_shifted_value;
 		}
 		else
 		{
@@ -389,7 +569,7 @@ function fromDvorakToQwerty(keyCode, shiftKey)
 	{
 		if (shiftKey)
 		{
-			return "<";
+			return row1key1_shifted_value;
 		}
 		else
 		{
@@ -400,7 +580,7 @@ function fromDvorakToQwerty(keyCode, shiftKey)
 	{
 		if (shiftKey)
 		{
-			return ">";
+			return row1key2_shifted_value;
 		}
 		else
 		{
@@ -411,7 +591,7 @@ function fromDvorakToQwerty(keyCode, shiftKey)
 	{
 		if (shiftKey)
 		{
-			return "P";
+			return row1key3_shifted_value;
 		}
 		else
 		{
@@ -422,7 +602,7 @@ function fromDvorakToQwerty(keyCode, shiftKey)
 	{
 		if (shiftKey)
 		{
-			return "Y";
+			return row1key4_shifted_value;
 		}
 		else
 		{
@@ -433,7 +613,7 @@ function fromDvorakToQwerty(keyCode, shiftKey)
 	{
 		if (shiftKey)
 		{
-			return "F";
+			return row1key5_shifted_value;
 		}
 		else
 		{
@@ -444,7 +624,7 @@ function fromDvorakToQwerty(keyCode, shiftKey)
 	{
 		if (shiftKey)
 		{
-			return "G";
+			return row1key6_shifted_value;
 		}
 		else
 		{
@@ -455,7 +635,7 @@ function fromDvorakToQwerty(keyCode, shiftKey)
 	{
 		if (shiftKey)
 		{
-			return "C";
+			return row1key7_shifted_value;
 		}
 		else
 		{
@@ -466,7 +646,7 @@ function fromDvorakToQwerty(keyCode, shiftKey)
 	{
 		if (shiftKey)
 		{
-			return "R";
+			return row1key8_shifted_value;
 		}
 		else
 		{
@@ -477,7 +657,7 @@ function fromDvorakToQwerty(keyCode, shiftKey)
 	{
 		if (shiftKey)
 		{
-			return "L";
+			return row1key9_shifted_value;
 		}
 		else
 		{
@@ -488,7 +668,7 @@ function fromDvorakToQwerty(keyCode, shiftKey)
 	{
 		if (shiftKey)
 		{
-			return "?";
+			return row1key10_shifted_value;
 		}
 		else
 		{
@@ -499,7 +679,7 @@ function fromDvorakToQwerty(keyCode, shiftKey)
 	{
 		if (shiftKey)
 		{
-			return "+";
+			return row1key11_shifted_value;
 		}
 		else
 		{
@@ -510,7 +690,7 @@ function fromDvorakToQwerty(keyCode, shiftKey)
 	{
 		if (shiftKey)
 		{
-			return "|";
+			return row1key12_shifted_value;
 		}
 		else
 		{
@@ -521,7 +701,7 @@ function fromDvorakToQwerty(keyCode, shiftKey)
 	{
 		if (shiftKey)
 		{
-			return "A";
+			return row2key0_shifted_value;
 		}
 		else
 		{
@@ -532,7 +712,7 @@ function fromDvorakToQwerty(keyCode, shiftKey)
 	{
 		if (shiftKey)
 		{
-			return "O";
+			return row2key1_shifted_value;
 		}
 		else
 		{
@@ -543,7 +723,7 @@ function fromDvorakToQwerty(keyCode, shiftKey)
 	{
 		if (shiftKey)
 		{
-			return "E";
+			return row2key2_shifted_value;
 		}
 		else
 		{
@@ -554,7 +734,7 @@ function fromDvorakToQwerty(keyCode, shiftKey)
 	{
 		if (shiftKey)
 		{
-			return "U";
+			return row2key3_shifted_value;
 		}
 		else
 		{
@@ -565,7 +745,7 @@ function fromDvorakToQwerty(keyCode, shiftKey)
 	{
 		if (shiftKey)
 		{
-			return "I";
+			return row2key4_shifted_value;
 		}
 		else
 		{
@@ -576,7 +756,7 @@ function fromDvorakToQwerty(keyCode, shiftKey)
 	{
 		if (shiftKey)
 		{
-			return "D";
+			return row2key5_shifted_value;
 		}
 		else
 		{
@@ -587,7 +767,7 @@ function fromDvorakToQwerty(keyCode, shiftKey)
 	{
 		if (shiftKey)
 		{
-			return "H";
+			return row2key6_shifted_value;
 		}
 		else
 		{
@@ -598,7 +778,7 @@ function fromDvorakToQwerty(keyCode, shiftKey)
 	{
 		if (shiftKey)
 		{
-			return "T";
+			return row2key7_shifted_value;
 		}
 		else
 		{
@@ -609,7 +789,7 @@ function fromDvorakToQwerty(keyCode, shiftKey)
 	{
 		if (shiftKey)
 		{
-			return "N";
+			return row2key8_shifted_value;
 		}
 		else
 		{
@@ -620,7 +800,7 @@ function fromDvorakToQwerty(keyCode, shiftKey)
 	{
 		if (shiftKey)
 		{
-			return "S";
+			return row2key9_shifted_value;
 		}
 		else
 		{
@@ -631,7 +811,7 @@ function fromDvorakToQwerty(keyCode, shiftKey)
 	{
 		if (shiftKey)
 		{
-			return "_";
+			return row2key10_shifted_value;
 		}
 		else 
 		{
@@ -642,7 +822,7 @@ function fromDvorakToQwerty(keyCode, shiftKey)
 	{
 		if (shiftKey)
 		{
-			return ":";
+			return row3key0_shifted_value;
 		}
 		else
 		{
@@ -653,7 +833,7 @@ function fromDvorakToQwerty(keyCode, shiftKey)
 	{
 		if (shiftKey)
 		{
-			return "Q";
+			return row3key1_shifted_value;
 		}
 		else
 		{
@@ -664,7 +844,7 @@ function fromDvorakToQwerty(keyCode, shiftKey)
 	{
 		if (shiftKey)
 		{
-			return "J";
+			return row3key2_shifted_value;
 		}
 		else
 		{
@@ -675,7 +855,7 @@ function fromDvorakToQwerty(keyCode, shiftKey)
 	{
 		if (shiftKey)
 		{
-			return "K";
+			return row3key3_shifted_value;
 		}
 		else
 		{
@@ -686,7 +866,7 @@ function fromDvorakToQwerty(keyCode, shiftKey)
 	{
 		if (shiftKey)
 		{
-			return "X";
+			return row3key4_shifted_value;
 		}
 		else 
 		{
@@ -697,7 +877,7 @@ function fromDvorakToQwerty(keyCode, shiftKey)
 	{
 		if (shiftKey)
 		{
-			return "B";
+			return row3key5_shifted_value;
 		}
 		else
 		{
@@ -708,7 +888,7 @@ function fromDvorakToQwerty(keyCode, shiftKey)
 	{
 		if (shiftKey)
 		{
-			return "M";
+			return row3key6_shifted_value;
 		}
 		else
 		{
@@ -719,7 +899,7 @@ function fromDvorakToQwerty(keyCode, shiftKey)
 	{
 		if (shiftKey)
 		{
-			return "W";
+			return row3key7_shifted_value;
 		}
 		else
 		{
@@ -730,7 +910,7 @@ function fromDvorakToQwerty(keyCode, shiftKey)
 	{
 		if (shiftKey)
 		{
-			return "V";
+			return row3key8_shifted_value;
 		}
 		else
 		{
@@ -741,7 +921,7 @@ function fromDvorakToQwerty(keyCode, shiftKey)
 	{
 		if (shiftKey)
 		{
-			return "Z";
+			return row3key9_shifted_value;
 		}
 		else
 		{
@@ -752,7 +932,7 @@ function fromDvorakToQwerty(keyCode, shiftKey)
 	{
 		if (shiftKey)
 		{
-			return "~";
+			return row0key0_shifted_value;
 		}
 		else
 		{
@@ -763,7 +943,7 @@ function fromDvorakToQwerty(keyCode, shiftKey)
 	{
 		if (shiftKey)
 		{
-			return "!";
+			return row0key1_shifted_value;
 		}
 		else
 		{
@@ -774,7 +954,7 @@ function fromDvorakToQwerty(keyCode, shiftKey)
 	{
 		if (shiftKey)
 		{
-			return "@";
+			return row0key2_shifted_value;
 		}
 		else
 		{
@@ -785,7 +965,7 @@ function fromDvorakToQwerty(keyCode, shiftKey)
 	{
 		if (shiftKey)
 		{
-			return "#";
+			return row0key3_shifted_value;
 		}
 		else
 		{
@@ -796,7 +976,7 @@ function fromDvorakToQwerty(keyCode, shiftKey)
 	{
 		if (shiftKey)
 		{
-			return "$";
+			return row0key4_shifted_value;
 		}
 		else
 		{
@@ -807,7 +987,7 @@ function fromDvorakToQwerty(keyCode, shiftKey)
 	{
 		if (shiftKey)
 		{
-			return "%";
+			return row0key5_shifted_value;
 		}
 		else
 		{
@@ -818,7 +998,7 @@ function fromDvorakToQwerty(keyCode, shiftKey)
 	{
 		if (shiftKey)
 		{
-			return "^";
+			return row0key6_shifted_value;
 		}
 		else
 		{
@@ -829,7 +1009,7 @@ function fromDvorakToQwerty(keyCode, shiftKey)
 	{
 		if (shiftKey)
 		{
-			return "&";
+			return row0key7_shifted_value;
 		}
 		else
 		{
@@ -840,7 +1020,7 @@ function fromDvorakToQwerty(keyCode, shiftKey)
 	{
 		if (shiftKey)
 		{
-			return "*";
+			return row0key8_shifted_value;
 		}
 		else
 		{
@@ -851,7 +1031,7 @@ function fromDvorakToQwerty(keyCode, shiftKey)
 	{
 		if (shiftKey)
 		{
-			return "(";
+			return row0key9_shifted_value;
 		}
 		else
 		{
@@ -862,7 +1042,7 @@ function fromDvorakToQwerty(keyCode, shiftKey)
 	{
 		if (shiftKey)
 		{
-			return ")";
+			return row0key10_shifted_value;
 		}
 		else
 		{
@@ -873,7 +1053,7 @@ function fromDvorakToQwerty(keyCode, shiftKey)
 	{
 		if (shiftKey)
 		{
-			return "{";
+			return row0key11_shifted_value;
 		}
 		else
 		{
@@ -884,7 +1064,7 @@ function fromDvorakToQwerty(keyCode, shiftKey)
 	{
 		if (shiftKey)
 		{
-			return "}";
+			return row0key12_shifted_value;
 		} 
 		else
 		{
