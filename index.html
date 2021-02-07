@@ -26,11 +26,20 @@ SOFTWARE.
 <head>
 		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
 		<title>Arabic (PC) Virtual Keyboard</title>
+		<style>
+		button
+		{
+			min-width: 4em;
+			min-height: 4em;
+			font-size: 15px;
+			padding:0px;
+		}
+		</style>
 	</head>
 	<body>
 		<h1>Arabic (PC) Virtual Keyboard</h1>
 		<p>Type as though you have an Arabic (PC) keyboard set up in the following text area.</p>
-		<textarea disabled id="outputText" rows="5" cols="50" aria-live="polite" style="background-color: lightblue; min-height: 40px; padding: 7px;"></textarea>
+		<textarea disabled id="outputText" rows="5" cols="50" aria-live="polite" dir="rtl" style="min-height: 40px; padding: 7px; font-size:25px; color:black;"></textarea>
 		<!-- We use the aria-live attribute so that screenreaders will read out changes to the textarea when they occur. This is useful for accessibility. -->
 		<button id="copyButton" onclick="copyTextIntoClipboard();">Copy text</button>
 		<p id="firstRow">
@@ -80,10 +89,11 @@ SOFTWARE.
 			<button id="row2key8" onclick="printToOutputFrom('row2key8');">n</button>
 			<button id="row2key9" onclick="printToOutputFrom('row2key9');">s</button>
 			<button id="row2key10" onclick="printToOutputFrom('row2key10');">-</button>
+			<button id="newLine" onclick="printToOutput('\n'); nextShiftValue();"> (new line) </button>
 		</p>
 
 		<p id="fourthRow">
-			<button id="leftShift" onclick="pressShift();">(shift)</button>
+			<button id="leftShift" onclick="pressShift();">(left shift)</button>
 
 			<button id="row3key0" onclick="printToOutputFrom('row3key0');">;</button>
 			<button id="row3key1" onclick="printToOutputFrom('row3key1');">q</button>
@@ -96,17 +106,15 @@ SOFTWARE.
 			<button id="row3key8" onclick="printToOutputFrom('row3key8');">v</button>
 			<button id="row3key9" onclick="printToOutputFrom('row3key9');">z</button>
 
-			<button id="rightShift" onclick="pressShift();">(shift)</button>
+			<button id="rightShift" onclick="pressShift();">(right shift)</button>
 		</p>
 
 		<p id="fifthRow">
-			<button id="spaceBar" onclick="printToOutput(' '); nextShiftValue();"> (space) </button>
-			<button id="newLine" onclick="printToOutput('\n'); nextShiftValue();"> (new line) </button>
-
+			<button id="spaceBar" style="margin-left: 10em; width: 25em;" onclick="printToOutput(' '); nextShiftValue();"> (space) </button>
 		</p>
 
 
-		<footer>Created by <a href="https://github.com/elsanussi-s-mneina">Elsanussi Mneina</a> Last updated on 2021-02-06 <a href="https://github.com/elsanussi-s-mneina/dvorak_virtual_keyboard_in_html_javascript">v0.6.0</a></footer>
+		<footer>Created by <a href="https://github.com/elsanussi-s-mneina">Elsanussi Mneina</a> Last updated on 2021-02-06 <a href="https://github.com/elsanussi-s-mneina/dvorak_virtual_keyboard_in_html_javascript">v0.6.1</a></footer>
 
 		<script>
 			const log = document.getElementById('outputText');

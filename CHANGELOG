@@ -9,3 +9,8 @@ Everything else has been kept as is.
 2020-02-06: v0.6.0 Implement caps lock
 Caps lock properly implemented.
 Major refactoring of code to make it more extensible also.
+
+2020-02-06: v0.6.1 Make text more readable
+Increase font size.
+Change font colors.
+Move new line key where return key is on traditional keyboard.
