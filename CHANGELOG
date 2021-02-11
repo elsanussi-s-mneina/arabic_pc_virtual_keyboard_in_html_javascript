@@ -1,19 +1,20 @@
-2020-02-06:
+2021-02-06:
 Start the project by copying code from the dvorak virtual keyboard program.
 Reset version number to v0.5.0.
 
-2020-02-06: v0.5.0   Implement unshifted keys
+2021-02-06: v0.5.0   Implement unshifted keys
 All keys that do not require shift or caps lock are implemented for typing Arabic.
 Everything else has been kept as is.
 
-2020-02-06: v0.6.0 Implement caps lock
+2021-02-06: v0.6.0 Implement caps lock
 Caps lock properly implemented.
 Major refactoring of code to make it more extensible also.
 
-2020-02-06: v0.6.1 Make text more readable
+2021-02-06: v0.6.1 Make text more readable
 Increase font size.
 Change font colors.
 Move new line key where return key is on traditional keyboard.
 
-2020-02-06: v0.7.0 Add backspace, and clearing buttons
+2021-02-06: v0.7.0 Add backspace, and clearing buttons
 It can now delete text one character or all characters at a time.
+
