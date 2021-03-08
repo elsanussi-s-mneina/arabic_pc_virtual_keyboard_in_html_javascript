@@ -21,7 +21,7 @@ You need to type Arabic, and are used to typing Arabic before but often have to 
  - Source code or plain text editor
 
 
-## About the Developer of this DVORAK Virtual Keyboard
+## About the Developer of this Arabic (PC) Virtual Keyboard
 https://www.linkedin.com/in/elsanussi-s-mneina/
 
 https://github.com/elsanussi-s-mneina
