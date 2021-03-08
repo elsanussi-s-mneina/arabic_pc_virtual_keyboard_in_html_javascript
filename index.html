@@ -592,7 +592,7 @@ function nextShiftValue()
 	}
 }
 
-function fromDvorakToQwerty(keyCode, shiftKey) 
+function convertKeyboardStateToUnicodeCharacter(keyCode, shiftKey) 
 {
 	if (keyCode == "Space")
 	{
@@ -1128,7 +1128,7 @@ function fromDvorakToQwerty(keyCode, shiftKey)
 function logKey(e)
 {
 	console.log(e);
-	var output = fromDvorakToQwerty(e.code, e.shiftKey);
+	var output = convertKeyboardStateToUnicodeCharacter(e.code, e.shiftKey);
 	printToOutput(output);
 }
 
