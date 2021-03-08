@@ -1,6 +1,6 @@
 # Arabic (PC) Virtual Keyboard Layout
 
-So far only the normal keys are implemented. Shift, and caps lock do not work as expected yet.
+So far only the normal keys are implemented. Shift, and caps lock do not work as expected yet. [Use now](https://elsanussi-s-mneina.github.io/u/ar_pc_virt.html).
 
 ## History:
 This project started on February 6, 2021.
