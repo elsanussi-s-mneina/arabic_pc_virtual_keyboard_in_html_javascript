@@ -21,3 +21,5 @@ It can now delete text one character or all characters at a time.
 2021-02-11 v0.8.0 Add many Arabic characters including diacritics, including some characters only used in Mehri, Soqotri. As well as a few Arabic characters from Persian often used unofficially in Arabic for various purposes. As well as a few characters once used for writing Arabic in the Maghreb. Most of these characters are not available on Arabic (PC), so I added them as extra buttons not on the keyboard. This is better than nothing, but is not sufficient for fast typing.
 
 2021-03-08 v0.8.1 Pressing physical backspace key now deletes the last character.
+
+2023-01-15 v0.8.5 Pressing space bar no longer scrolls page down.
